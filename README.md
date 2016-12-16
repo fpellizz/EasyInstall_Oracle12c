@@ -5,21 +5,24 @@ Oracle 12c installation script, using the silent installation mode, a custom res
 Questo script è stato realizzato con lo scopo di facilitare l'installazione di un Oracle 12c, senza configurazione Container DB + Pluggable DB. 
 Non è più necessaria l'interfaccia grafica sul server, ne lo sbattimento di creare un utente dedicato, basta configurare pochi parametri e lo script di installazione farà tutto il lavoro sporco. 
 
+## More info
+This script works on RHEL based distribution, or at least it should does...
+I've tested (and developed) on a CentOS 6.x 
+
 ## Usage
 ### Download installer 
 - Download the install zip archive from [Oracle](http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html)
-
 ### Configure:
 - set the **SOURCEPATH** variable with the path in which you put the oracle zip archive for example if you copy linuxamd64_12102_database_se2_1of2.zip and linuxamd64_12102_database_se2_2of2.zip on /opt folder
 ```
 SOURCEPATH=/opt
 ```
-- set the **SOURCE1** and **SOURCE2** variables with the name of the oracle zip archive for example if you've downloaded linuxamd64_12102_database_se2_1of2.zip and linuxamd64_12102_database_se2_2of2.zip 
+- set the **SOURCE1** and **SOURCE2** variables with the name of the oracle zip archive for example if you've downloaded _linuxamd64_12102_database_se2_1of2.zip_ and _linuxamd64_12102_database_se2_2of2.zip_
 ```
 SOURCE1=linuxamd64_12102_database_se2_1of2.zip
 SOURCE2=linuxamd64_12102_database_se2_2of2.zip
 ``` 
-- [OPTIONAL] set the **HOSTNAME** variable with the hostname or the ip address of the server in which you are going to install Oracle. This step is optional because, if you left empty the HOSTNAME value, will automagically replace with the output of the bash command "`hostname -f`" by the installation script . If you're working on amazon for example, the script automatically will pick the private ip, and sometimes it is not a good thing.
+- `[OPTIONAL]` set the **HOSTNAME** variable with the hostname or the ip address of the server in which you are going to install Oracle. This step is optional because, if you left empty the HOSTNAME value, will automagically replace with the output of the bash command "_hostname -f_" by the installation script . If you're working on amazon for example, the script automatically will pick the private ip, and sometimes it is not a good thing.
 ```
 HOSTNAME=192.168.169.170
 #or
@@ -42,6 +45,9 @@ ORANATCHARSET=AL16UTF16
 ``` 
 ### Copying files
 - Copy the Oracle zip archive into the **$SOURCEPATH** path
+```
+$ cp linuxamd64_12102_database_* /opt
+```
 - Copy the sh script and the db.rsp.tmpl file 
 ### Change Permission
 - make the sh script executable
@@ -49,7 +55,7 @@ ORANATCHARSET=AL16UTF16
 $ chmod +x oracle12_installer.sh
 ``` 
 ### Run 
-- Run the script as root
+- Run the script as __**root**__
 ```
 $ su -c "./oracle12_installer.sh"
 #or
