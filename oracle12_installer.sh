@@ -35,7 +35,7 @@ ORACLE_BASE=${ORATOPDIR}/product/base
 # ** the ORACLE_HOME to use
 ORACLE_HOME=${ORACLE_BASE}/12.1.0.2
 # ** base directory for the oracle database files
-ORABASEDIR=/oradata
+ORABASEDIR=/opt/oradata
 # ** the owner of the oracle software
 ORAOWNER=oracle
 # ** the primary installation group
