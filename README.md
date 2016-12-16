@@ -12,6 +12,7 @@ I've tested (and developed) on a CentOS 6.x
 ## Usage
 ### Download installer 
 - Download the install zip archive from [Oracle](http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html)
+
 ### Configure:
 - set the **SOURCEPATH** variable with the path in which you put the oracle zip archive for example if you copy linuxamd64_12102_database_se2_1of2.zip and linuxamd64_12102_database_se2_2of2.zip on /opt folder
 ```
