@@ -2,8 +2,7 @@
 Oracle 12c installation script, using the silent installation mode, a custom response file and a lot of bash magic
 
 ## Info
-Questo script è stato realizzato con lo scopo di facilitare l'installazione di un Oracle 12c, senza configurazione Container DB + Pluggable DB. 
-Non è più necessaria l'interfaccia grafica sul server, ne lo sbattimento di creare un utente dedicato, basta configurare pochi parametri e lo script di installazione farà tutto il lavoro sporco. 
+This script was made in order to facilitate the installation of an Oracle 12c with no configuration DB Container + Pluggable DB. the graphical interface on the server is no longer required, no need to to create a dedicated oracle user, just configure a few parameters and the installation script will do all the dirty work.
 
 ## More info
 This script works on RHEL based distribution, or at least it should does...
