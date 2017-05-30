@@ -13,6 +13,7 @@ I've tested (and developed) on a CentOS 6.x
 - Download the install zip archive from [Oracle](http://www.oracle.com/technetwork/database/enterprise-edition/downloads/index.html)
 
 ### Configure:
+To configure the installer you have to modify the properties in "_config.sh_" file
 - set the **SOURCEPATH** variable with the path in which you put the oracle zip archive for example if you copy linuxamd64_12102_database_se2_1of2.zip and linuxamd64_12102_database_se2_2of2.zip on /opt folder
 ```
 SOURCEPATH=/opt
@@ -22,7 +23,7 @@ SOURCEPATH=/opt
 SOURCE1=linuxamd64_12102_database_se2_1of2.zip
 SOURCE2=linuxamd64_12102_database_se2_2of2.zip
 ``` 
-- `[OPTIONAL]` set the **HOSTNAME** variable with the hostname or the ip address of the server in which you are going to install Oracle. This step is optional because, if you left empty the HOSTNAME value, will automagically replace with the output of the bash command "_hostname -f_" by the installation script . If you're working on amazon for example, the script automatically will pick the private ip, and sometimes it is not a good thing.
+- `[OPTIONAL]` set the **HOSTNAME** variable with the hostname or the ip address of the server in which you are going to install Oracle. This step is optional because, if you left empty the HOSTNAME value, will automagically replace with the output of the bash command "_hostname -f_" by the installation script . If you're working on amazon for example, the script automatically will pick the private ip, and sometimes it is not a good thing, that's why I've added a **PRIVATE_HOSTNAME** parameter in configuration file. In this way you can specify even the public ip (or public dns) and private ip (or dns) 
 ```
 HOSTNAME=192.168.169.170
 #or
