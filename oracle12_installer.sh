@@ -134,6 +134,7 @@ _configure_responseFile() {
     #sed -i "s@oracle.install.db.config.starterdb.characterSet=@oracle.install.db.config.starterdb.characterSet=$ORACHARSET@g" ./db.rsp
     # install oracle12g like oracle11g without CDB-PDB feature
     #sed -i "s@oracle.install.db.ConfigureAsContainerDB=@oracle.install.db.ConfigureAsContainerDB=false@g" ./db.rsp
+    cp db.rsp /tmp/db.rsp
 }
 
 # create the user and the groups
@@ -251,7 +252,7 @@ _install_oracle_software() {
     #SELECTED_LANGUAGES=en \
     #oracle.install.db.InstallEdition=EE \
     #DECLINE_SECURITY_UPDATES=true  -silent -ignoreSysPrereqs -ignorePrereq -waitForCompletion"
-    su -  ${ORAOWNER} -c "cd ${WORKDIR}/database; ./runInstaller -silent -ignoreSysPrereqs -ignorePrereq -waitForCompletion -responseFile /opt/db.rsp"
+    su -  ${ORAOWNER} -c "cd ${WORKDIR}/database; ./runInstaller -silent -ignoreSysPrereqs -ignorePrereq -waitForCompletion -responseFile /tmp/db.rsp"
     ${ORAINVDIR}/orainstRoot.sh
     ${ORACLE_HOME}/root.sh
 }
